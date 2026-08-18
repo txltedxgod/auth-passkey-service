@@ -1,0 +1,4 @@
+[project]
+name = 'auth-passkey-service'
+version = '0.1.0'
+dependencies = ['fastapi>=0.110.0', 'pydantic>=2.5.0', 'uvicorn>=0.28.0']
