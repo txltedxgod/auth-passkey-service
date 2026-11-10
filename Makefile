@@ -1,18 +1,24 @@
-.PHONY: all test run lint clean docker-build
+.PHONY: all install test run lint format clean docker-build
 
-all: test
+all: lint test
+
+install:
+	python -m pip install -r requirements.txt ruff
 
 test:
-	pytest
+	pytest -v tests/
 
 run:
-	uvicorn app.main:app --reload
+	uvicorn passkey.api:app --reload
 
 lint:
-	@echo "Running lint checks..."
+	ruff check .
+
+format:
+	ruff format .
 
 clean:
-	@echo "Cleaning artifacts..."
+	rm -rf .pytest_cache .ruff_cache **/__pycache__
 
 docker-build:
-	docker build -t app:latest .
+	docker build -t auth-passkey-service:latest .
