@@ -25,6 +25,18 @@ sequenceDiagram
     API-->>User: 201 Created (RegistrationReceipt)
 ```
 
+---
+
+## 🎬 Feature Demo
+
+<p align="center">
+  <img src="assets/demo.gif" alt="Auth Passkey Service Feature Demo — WebAuthn / FIDO2 Passwordless Passkey Microservice" width="840" />
+</p>
+<p align="center">
+  <sub><a href="assets/demo.mp4">Watch / Download 1080p60 MP4</a></sub>
+</p>
+
+---
 ## Features
 - **Cryptographic Verification**: Verifies `ES256` (`secp256r1` DER/IEEE P1363) and `EdDSA` (`Ed25519`) WebAuthn signatures over `authenticatorData || SHA256(clientDataJSON)`.
 - **CBOR & COSE Engine** (`passkey/cbor.py`): Zero-external-CBOR RFC 8949 decoder/encoder, COSE key extraction, and `authenticatorData` (`rpIdHash`, `UP`/`UV`/`AT`/`ED` flags, `AAGUID`, `signCount`) parsing.
